@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "mvBXWkAJOlkrnkQnXdcVnJTPMMu9BCXUf+1r0uWyqOPiLxk1NTi3Vzu0RUdUrAKrwbYwFF/yeHC5+HRMPqe1AQ==",
+  "dgSpecHash": "0tyBfVCgcXk4pxiiT4VkImkThCtrnmfU4I0yDzi1/1zXJdoTDl2NdEoTstD/8afwJXiL8s9vtL65KXQbKZE9Tw==",
   "success": true,
   "projectFilePath": "C:\\Users\\lucas\\Documents\\cursos-projetos\\mascotePokemon\\mascotePokemon\\mascotePokemon.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\lucas\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\lucas\\.nuget\\packages\\restsharp\\110.2.0\\restsharp.110.2.0.nupkg.sha512",
+    "C:\\Users\\lucas\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\lucas\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
+    "C:\\Users\\lucas\\.nuget\\packages\\system.text.json\\7.0.2\\system.text.json.7.0.2.nupkg.sha512"
+  ],
   "logs": []
 }
