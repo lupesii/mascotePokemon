@@ -1,33 +1,49 @@
 ﻿using mascotePokemon.Modelos;
+using mascotePokemon.Menus;
 using Newtonsoft.Json;
 using RestSharp;
 using System.Text.Json;
 
-static void ExibirOpcoes()
+List<MascotePokemon> ListaDePokemon = new();
+
+void ExibirOpcoes()
+
 {
-    Console.WriteLine("Bem vindo ao seu mascote pokemon!!");
-    Console.WriteLine("Escolha a espécie:");
-    var response = MethodGET.RequisicaoGet("https://pokeapi.co/api/v2/pokemon-species/");
-    var EspeciesPokemon = JsonConvert.DeserializeObject<PokemonResult>(response.Content!);
-    
-    for (int i = 0; i < EspeciesPokemon!.Results.Count; i++)
+    Console.Clear();
+    Console.WriteLine(@"
+██████╗░░█████╗░██╗░░██╗███████╗░██████╗░░█████╗░████████╗░█████╗░██╗░░██╗██╗
+██╔══██╗██╔══██╗██║░██╔╝██╔════╝██╔════╝░██╔══██╗╚══██╔══╝██╔══██╗██║░░██║██║
+██████╔╝██║░░██║█████═╝░█████╗░░██║░░██╗░██║░░██║░░░██║░░░██║░░╚═╝███████║██║
+██╔═══╝░██║░░██║██╔═██╗░██╔══╝░░██║░░╚██╗██║░░██║░░░██║░░░██║░░██╗██╔══██║██║
+██║░░░░░╚█████╔╝██║░╚██╗███████╗╚██████╔╝╚█████╔╝░░░██║░░░╚█████╔╝██║░░██║██║
+╚═╝░░░░░░╚════╝░╚═╝░░╚═╝╚══════╝░╚═════╝░░╚════╝░░░░╚═╝░░░░╚════╝░╚═╝░░╚═╝╚═╝");
+    Console.WriteLine("Seja bem-vindo a loja seu mascote pokemon!!\n");
+    Console.WriteLine("Para entrar na loja, pressione qualquer tecla");
+    Console.ReadKey();
+
+    int opcaoEscolhida = Menu.ExibirMenu();
+
+    switch (opcaoEscolhida)
     {
-        Console.WriteLine($"{i + 1}.{EspeciesPokemon.Results[i].Name}");
+        case 1:
+            Menu.AdotaMascote(ListaDePokemon);
+            ExibirOpcoes();
+            break;
+
+        case 2:
+            Menu.MascotesAdotados(ListaDePokemon);
+            ExibirOpcoes();
+            break;
+
+        case 3:
+            Menu.Sair();
+            break;
+
+        default:
+            Console.WriteLine("Opção Inválida");
+            break;
     }
 
-    Console.Write("Digite sua respota: ");
-    int pokemonEscolhido = int.Parse(Console.ReadLine()!);
-
-    if (pokemonEscolhido <= EspeciesPokemon.Results.Count && pokemonEscolhido > 0)
-    {
-        var especificacaoPokemon = MethodGET.RequisicaoGet($"https://pokeapi.co/api/v2/pokemon/{pokemonEscolhido}");
-        var mascote = JsonConvert.DeserializeObject<MascotePokemon>(especificacaoPokemon.Content!);
-        MascotePokemon.ExibirEstatisticas(mascote!);
-    }
-    else
-    {
-        Console.WriteLine("\n Opção invalida");
-    }
 }
 
 ExibirOpcoes();

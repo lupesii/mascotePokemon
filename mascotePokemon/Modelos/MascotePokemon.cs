@@ -1,4 +1,6 @@
-﻿namespace mascotePokemon.Modelos;
+﻿using mascotePokemon.Menus;
+
+namespace mascotePokemon.Modelos;
 
 internal class MascotePokemon
 {
@@ -10,17 +12,15 @@ internal class MascotePokemon
 
     public static void ExibirEstatisticas(MascotePokemon mascote)
     { 
-        Console.Clear();
-        Console.WriteLine($"PARABÉNS, SUA ESCOLHA FOI {mascote.Name}!\nESPERO QUE SEJAM FELIZES JUNTOS");
-        Console.WriteLine("Detalhes:");
-        Console.WriteLine($"- Nome: {mascote.Name}");
-        Console.WriteLine($"- Altura: {mascote.Height}");
-        Console.WriteLine($"- Peso: {mascote.Weight}");
-        Console.WriteLine("Habilidades do pokemon: ");
+        Console.WriteLine("DETALHES DO POKEMON:");
+        Console.WriteLine($"- NOME: {mascote.Name}");
+        Console.WriteLine($"- ALTURA: {mascote.Height}");
+        Console.WriteLine($"- PESO: {mascote.Weight}");
+        Console.WriteLine("HABILIDADES DO POKEMON: ");
 
         foreach (var i in mascote.Abilities)
         {
-            Console.WriteLine($"Nome da habilidade: {i.Ability.Name}");
+            Console.WriteLine($"NOME DA HABILIDADE: {i.Ability.Name}");
         }
     }
 }
