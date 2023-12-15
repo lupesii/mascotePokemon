@@ -1,8 +1,8 @@
 ﻿using RestSharp;
 
-namespace mascotePokemon.Modelos;
+namespace mascotePokemon.Service;
 
-internal class MethodGET
+internal class PokemonAPI
 {
     public static RestResponse RequisicaoGet(string url)
     {

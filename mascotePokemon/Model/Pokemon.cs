@@ -24,3 +24,17 @@ internal class MascotePokemon
         }
     }
 }
+internal class PokemonResult
+{
+    public int Count { get; set; }
+    public string Next { get; set; }
+    public string Previous { get; set; }
+    public List<PokemonEspeciesResult> Results { get; set; }
+}
+
+internal class PokemonEspeciesResult
+{
+    public string Name { get; set; }
+    public string Url { get; set; }
+}
+

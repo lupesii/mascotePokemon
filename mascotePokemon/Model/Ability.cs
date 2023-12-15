@@ -8,7 +8,7 @@ namespace mascotePokemon.Modelos
 {
     internal class PokemonHabilidadesDetalhes
     {
-        public PokemonHabilidades Ability { get; set; }
+        public Abilities Ability { get; set; }
         public bool Is_hidden { get; set; }
         public int Slot { get; set; }
     }
